@@ -1,0 +1,428 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+$accent-color : orange;
+$text-color : white;
+$banner-color : #975d1f;
+
+@mixin flex ($gap : 0, $dir: row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $dir;
+    gap: $gap;
+}
+
+@mixin btn {
+    width: 250px;
+    border: 3px solid $accent-color;
+    padding: 10px;
+    border-radius: 5px;
+    color: $text-color;
+    background-color: transparent;
+    font-weight: bold;
+    transition: all 500ms;
+    text-decoration: none;
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+
+    &:hover {
+        background-color: $accent-color;
+        cursor: pointer;
+    }
+}
+
+@mixin img-bg-banner($src) {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($src);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+@mixin img-bg-banner2($src) {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url($src);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin sub-section-heading ($size) {
+    color: $text-color;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-size: $size;
+    text-decoration: underline;
+    text-decoration-color: $accent-color;
+}
+
+.navbar {
+    background-color: $banner-color;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.5);
+
+    .header {
+        @include flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+
+        .left {
+            @include flex(10px, row);
+            text-decoration: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            img {
+                width: 40px;
+            }
+
+            p {
+                font-family: "Big Shoulders Display", sans-serif;
+                color: $text-color;
+                font-size: 1.4375rem;
+                font-weight: bold;
+            }
+        }
+
+        .right {
+            ul {
+                @include flex(25px, row);
+
+                li {
+                    list-style: none;
+
+                    a {
+                        text-decoration: none;
+                        color: $text-color;
+                        font-weight: bold;
+                        font-family: "Lexend Deca", sans-serif;
+                        padding: 10px;
+                        border-radius: 4px;
+                        transition: all 500ms;
+
+                        &:hover {
+                            background-color: $accent-color;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main {
+    @include img-bg-banner("/assets/background-burger-image.jpg");
+    @include flex(0px, column);
+
+    h1 {
+        font-size: 4.375rem;
+        font-family: "Big Shoulders Display", sans-serif;
+        color: $text-color;
+    }
+
+    p {
+        font-family: "Lexend Deca", sans-serif;
+        text-align: center;
+        margin: 50px 0;
+        color: $text-color;
+    }
+
+    .know-more-button {
+        @include btn;
+    }
+}
+
+.about-section {
+    @include img-bg-banner("/assets/background-about-burger.jpg");
+    @include flex(0px, column);
+
+    p {
+        color: $text-color;
+        font-family: "Big Shoulders Display", sans-serif;
+        text-align: center;
+        font-size: 5.625rem;
+        padding: 0 10px;
+        font-weight: bold;
+
+        span {
+            color: $accent-color;
+        }
+    }
+}
+
+.history {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    background-color: #5f380ff3;
+    align-items: center;
+    border: 5px solid $accent-color;
+
+    .pictures {
+        padding: 20px;
+        @include flex;
+
+        img {
+            width: 378px;
+        }
+    }
+
+    .info {
+        padding: 20px;
+        @include flex(0, column);
+
+        h2 {
+            color: $text-color;
+            font-family: "Big Shoulders Display", sans-serif;
+            font-size: 2.5rem;
+
+        }
+
+        h3 {
+            margin-block: 20px;
+            color: $text-color;
+            font-family: "Lexend Deca", sans-serif;
+            text-decoration: underline;
+            color: #ffa600f8;
+            font-size: 1.25rem;
+        }
+
+        p {
+            font-family: "Lexend Deca", sans-serif;
+            color: $text-color;
+        }
+    }
+}
+
+.menu-section {
+    @include flex(0, column);
+    @include img-bg-banner2("assets/ingredients-background.webp");
+    padding: 50px 40px;
+
+    .heading {
+        h2 {
+            @include sub-section-heading(5rem);
+            padding-bottom: 10px;
+        }
+    }
+
+    .menu-card {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 20px;
+
+        .menu {
+
+            h2 {
+                font-family: "Big Shoulders Display", sans-serif;
+                color: $text-color;
+                font-size: 1.875rem;
+
+                &::before {
+                    content: "🔴";
+                }
+            }
+
+            .item {
+                border-top: 2px solid $accent-color;
+                margin-block: 10px;
+                padding: 10px;
+                @include flex;
+                justify-content: space-between;
+                font-family: "Lexend Deca", sans-serif;
+                color: $text-color;
+            }
+
+            .description {
+                font-family: "Lexend Deca", sans-serif;
+                color: $text-color;
+                padding-inline: 10px;
+                padding-bottom: 10px;
+                font-size: .875rem;
+                border-bottom: 2px solid $accent-color;
+            }
+        }
+
+        .menu-2 {
+            @extend .menu;
+
+            h2 {
+                &::before {
+                    content: "🟢";
+                }
+            }
+        }
+    }
+}
+
+.contact-section {
+    @include flex(50px, column);
+    @include img-bg-banner2("assets/people-background.jpg");
+    padding-top: 60px;
+
+    h2 {
+        @include sub-section-heading(3.75rem);
+    }
+
+    .contact-page {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 20px;
+            gap: 40px;
+
+            label {
+                font-family: "Lexend Deca", sans-serif;
+                color: $text-color;
+
+                span {
+                    color: $accent-color;
+                }
+            }
+
+            input {
+                background-color: transparent;
+                outline: none;
+                border: 2px solid $accent-color;
+                border-top: none;
+                border-inline: none;
+                max-width: 250px;
+                color: $text-color;
+                margin-bottom: 25px;
+            }
+
+            .message {
+                input {
+                    width: 500px;
+                }
+            }
+
+            button {
+                @include btn;
+                width: 150px;
+            }
+        }
+
+        .contact-info {
+            @include flex(20px, column);
+            color: $text-color;
+
+            h2 {
+                text-align: center;
+                font-family: "Lexend Deca", sans-serif;
+                font-size: 1.5rem;
+                text-decoration: underline;
+                text-decoration-color: $accent-color;
+            }
+
+            p {
+                line-height: 30px;
+                font-family: "Lexend Deca", sans-serif;
+            }
+
+            .communicate {
+                .icons {
+                    margin-top: 10px;
+                    @include flex(20px, row);
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: $banner-color;
+
+    p {
+        text-align: center;
+        padding: 20px;
+        color: $text-color;
+        font-family: "Lexend Deca", sans-serif;
+    }
+}
+
+@media (max-width : 600px) {
+    .navbar {
+        .header {
+            .right {
+                ul {
+                    @include flex(2px, column);
+
+                    li {
+
+                        a {
+                            padding: 0;
+                            border-radius: 0;
+                            transition: none;
+
+                            &:hover {
+                                border-bottom: 2px solid $accent-color;
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width : 832px) {
+    .history {
+        display: flex;
+        flex-direction: column;
+
+        .chef {
+            order: 0;
+        }
+
+        .chef-info {
+            order: 1;
+            border-bottom: 5px solid $accent-color;
+        }
+
+        .restaurant-info {
+            order: 3;
+            border-bottom: none;
+        }
+
+        .restaurant {
+            order: 2;
+        }
+    }
+}
+
+@media (max-width : 770px) {
+    .menu-section {
+        .menu-card {
+            @include flex(0, column);
+
+            .menu {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .contact-section {
+        padding-bottom: 20px;
+
+        .contact-page {
+            @include flex(0, column);
+
+            .contact-form {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

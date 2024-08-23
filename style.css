@@ -1,0 +1,402 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background-color: #975d1f;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.navbar .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.navbar .header .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  text-decoration: none;
+}
+.navbar .header .left:hover {
+  cursor: pointer;
+}
+.navbar .header .left img {
+  width: 40px;
+}
+.navbar .header .left p {
+  font-family: "Big Shoulders Display", sans-serif;
+  color: white;
+  font-size: 1.4375rem;
+  font-weight: bold;
+}
+.navbar .header .right ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 25px;
+}
+.navbar .header .right ul li {
+  list-style: none;
+}
+.navbar .header .right ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-family: "Lexend Deca", sans-serif;
+  padding: 10px;
+  border-radius: 4px;
+  transition: all 500ms;
+}
+.navbar .header .right ul li a:hover {
+  background-color: orange;
+}
+
+.main {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/background-burger-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0px;
+}
+.main h1 {
+  font-size: 4.375rem;
+  font-family: "Big Shoulders Display", sans-serif;
+  color: white;
+}
+.main p {
+  font-family: "Lexend Deca", sans-serif;
+  text-align: center;
+  margin: 50px 0;
+  color: white;
+}
+.main .know-more-button {
+  width: 250px;
+  border: 3px solid orange;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: transparent;
+  font-weight: bold;
+  transition: all 500ms;
+  text-decoration: none;
+  font-family: "Lexend Deca", sans-serif;
+  text-align: center;
+}
+.main .know-more-button:hover {
+  background-color: orange;
+  cursor: pointer;
+}
+
+.about-section {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/background-about-burger.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0px;
+}
+.about-section p {
+  color: white;
+  font-family: "Big Shoulders Display", sans-serif;
+  text-align: center;
+  font-size: 5.625rem;
+  padding: 0 10px;
+  font-weight: bold;
+}
+.about-section p span {
+  color: orange;
+}
+
+.history {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  background-color: rgba(95, 56, 15, 0.9529411765);
+  align-items: center;
+  border: 5px solid orange;
+}
+.history .pictures {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+}
+.history .pictures img {
+  width: 378px;
+}
+.history .info {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+}
+.history .info h2 {
+  color: white;
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 2.5rem;
+}
+.history .info h3 {
+  margin-block: 20px;
+  color: white;
+  font-family: "Lexend Deca", sans-serif;
+  text-decoration: underline;
+  color: rgba(255, 166, 0, 0.9725490196);
+  font-size: 1.25rem;
+}
+.history .info p {
+  font-family: "Lexend Deca", sans-serif;
+  color: white;
+}
+
+.menu-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url("assets/ingredients-background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 40px;
+}
+.menu-section .heading h2 {
+  color: white;
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 5rem;
+  text-decoration: underline;
+  text-decoration-color: orange;
+  padding-bottom: 10px;
+}
+.menu-section .menu-card {
+  display: grid;
+  grid-template-columns: auto auto;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.menu-section .menu-card .menu h2, .menu-section .menu-card .menu-2 h2 {
+  font-family: "Big Shoulders Display", sans-serif;
+  color: white;
+  font-size: 1.875rem;
+}
+.menu-section .menu-card .menu h2::before, .menu-section .menu-card .menu-2 h2::before {
+  content: "🔴";
+}
+.menu-section .menu-card .menu .item, .menu-section .menu-card .menu-2 .item {
+  border-top: 2px solid orange;
+  margin-block: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  justify-content: space-between;
+  font-family: "Lexend Deca", sans-serif;
+  color: white;
+}
+.menu-section .menu-card .menu .description, .menu-section .menu-card .menu-2 .description {
+  font-family: "Lexend Deca", sans-serif;
+  color: white;
+  padding-inline: 10px;
+  padding-bottom: 10px;
+  font-size: 0.875rem;
+  border-bottom: 2px solid orange;
+}
+.menu-section .menu-card .menu-2 h2::before {
+  content: "🟢";
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url("assets/people-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+}
+.contact-section h2 {
+  color: white;
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 3.75rem;
+  text-decoration: underline;
+  text-decoration-color: orange;
+}
+.contact-section .contact-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contact-section .contact-page .contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  gap: 40px;
+}
+.contact-section .contact-page .contact-form label {
+  font-family: "Lexend Deca", sans-serif;
+  color: white;
+}
+.contact-section .contact-page .contact-form label span {
+  color: orange;
+}
+.contact-section .contact-page .contact-form input {
+  background-color: transparent;
+  outline: none;
+  border: 2px solid orange;
+  border-top: none;
+  border-inline: none;
+  max-width: 250px;
+  color: white;
+  margin-bottom: 25px;
+}
+.contact-section .contact-page .contact-form .message input {
+  width: 500px;
+}
+.contact-section .contact-page .contact-form button {
+  width: 250px;
+  border: 3px solid orange;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: transparent;
+  font-weight: bold;
+  transition: all 500ms;
+  text-decoration: none;
+  font-family: "Lexend Deca", sans-serif;
+  text-align: center;
+  width: 150px;
+}
+.contact-section .contact-page .contact-form button:hover {
+  background-color: orange;
+  cursor: pointer;
+}
+.contact-section .contact-page .contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+.contact-section .contact-page .contact-info h2 {
+  text-align: center;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1.5rem;
+  text-decoration: underline;
+  text-decoration-color: orange;
+}
+.contact-section .contact-page .contact-info p {
+  line-height: 30px;
+  font-family: "Lexend Deca", sans-serif;
+}
+.contact-section .contact-page .contact-info .communicate .icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.footer {
+  background-color: #975d1f;
+}
+.footer p {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .navbar .header .right ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .navbar .header .right ul li a {
+    padding: 0;
+    border-radius: 0;
+    transition: none;
+  }
+  .navbar .header .right ul li a:hover {
+    border-bottom: 2px solid orange;
+    background-color: transparent;
+  }
+}
+@media (max-width: 832px) {
+  .history {
+    display: flex;
+    flex-direction: column;
+  }
+  .history .chef {
+    order: 0;
+  }
+  .history .chef-info {
+    order: 1;
+    border-bottom: 5px solid orange;
+  }
+  .history .restaurant-info {
+    order: 3;
+    border-bottom: none;
+  }
+  .history .restaurant {
+    order: 2;
+  }
+}
+@media (max-width: 770px) {
+  .menu-section .menu-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+  }
+  .menu-section .menu-card .menu, .menu-section .menu-card .menu-2 {
+    margin-bottom: 30px;
+  }
+  .contact-section {
+    padding-bottom: 20px;
+  }
+  .contact-section .contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+  }
+  .contact-section .contact-page .contact-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+}/*# sourceMappingURL=style.css.map */
