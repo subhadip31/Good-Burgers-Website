@@ -352,6 +352,9 @@
     border-bottom: 2px solid orange;
     background-color: transparent;
   }
+  .history .pictures img {
+    width: 90vw;
+  }
 }
 @media (max-width: 832px) {
   .history {
