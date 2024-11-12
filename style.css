@@ -64,6 +64,50 @@
 .navbar .header .right ul li a:hover {
   background-color: orange;
 }
+.navbar .header .right ul li .hamburger-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 32px;
+  cursor: pointer;
+  display: none;
+}
+.navbar .header .right .side-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 4;
+  background-color: rgba(151, 93, 31, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.navbar .header .right .side-bar li {
+  width: 100%;
+  align-self: center;
+}
+.navbar .header .right .side-bar li a {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+}
+.navbar .header .right .side-bar li .hamburger-btn-close {
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 32px;
+  cursor: pointer;
+  position: relative;
+  left: 10px;
+  top: 10px;
+}
 
 .main {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/background-burger-image.jpg");
@@ -75,6 +119,7 @@
   align-items: center;
   flex-direction: column;
   gap: 0px;
+  scroll-margin-top: 40px;
 }
 .main h1 {
   font-size: 4.375rem;
@@ -183,6 +228,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 50px 40px;
+  scroll-margin-top: 10px;
 }
 .menu-section .heading h2 {
   color: white;
@@ -240,7 +286,8 @@
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url("assets/people-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 60px;
+  padding-top: 30px;
+  scroll-margin-top: 40px;
 }
 .contact-section h2 {
   color: white;
@@ -335,22 +382,19 @@
   font-family: "Lexend Deca", sans-serif;
 }
 
-@media (max-width: 600px) {
-  .navbar .header .right ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 2px;
+@media (max-width: 400px) {
+  .contact-section {
+    scroll-margin-top: 35px;
   }
+}
+@media (max-width: 650px) {
   .navbar .header .right ul li a {
-    padding: 0;
-    border-radius: 0;
-    transition: none;
+    display: none;
   }
-  .navbar .header .right ul li a:hover {
-    border-bottom: 2px solid orange;
-    background-color: transparent;
+  .navbar .header .right ul li .hamburger-btn {
+    position: relative;
+    left: 100px;
+    display: block;
   }
   .history .pictures img {
     width: 90vw;
