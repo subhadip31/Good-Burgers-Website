@@ -57,12 +57,19 @@ $banner-color : #975d1f;
     text-decoration-color: $accent-color;
 }
 
+@mixin section-max-width{
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .navbar {
     background-color: $banner-color;
     position: sticky;
     top: 0;
     z-index: 1;
     box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.5);
+    @include section-max-width;
 
     .header {
         @include flex;
@@ -164,6 +171,7 @@ $banner-color : #975d1f;
     @include img-bg-banner("/assets/background-burger-image.jpg");
     @include flex(0px, column);
     scroll-margin-top: 40px;
+    @include section-max-width;
 
     h1 {
         font-size: 4.375rem;
@@ -186,6 +194,7 @@ $banner-color : #975d1f;
 .about-section {
     @include img-bg-banner("/assets/background-about-burger.jpg");
     @include flex(0px, column);
+    @include section-max-width;
 
     p {
         color: $text-color;
@@ -208,6 +217,7 @@ $banner-color : #975d1f;
     background-color: #5f380ff3;
     align-items: center;
     border: 5px solid $accent-color;
+    @include section-max-width;
 
     .pictures {
         padding: 20px;
@@ -250,6 +260,7 @@ $banner-color : #975d1f;
     @include img-bg-banner2("assets/ingredients-background.webp");
     padding: 50px 40px;
     scroll-margin-top: 10px;
+    @include section-max-width;
 
     .heading {
         h2 {
@@ -312,6 +323,7 @@ $banner-color : #975d1f;
     @include img-bg-banner2("assets/people-background.jpg");
     padding-top: 30px;
     scroll-margin-top: 40px;
+    @include section-max-width;
 
     h2 {
         @include sub-section-heading(3.75rem);
@@ -388,6 +400,7 @@ $banner-color : #975d1f;
 
 .footer {
     background-color: $banner-color;
+    @include section-max-width;
 
     p {
         text-align: center;
